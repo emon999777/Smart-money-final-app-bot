@@ -356,7 +356,7 @@
                 
                 <div class="card-bg p-4 rounded-lg text-center">
                     <h3 class="text-lg font-semibold mb-2 text-slate-800">কোড সংগ্রহ করে আয় করুন</h3>
-                    <p class="text-gray-600 text-sm mb-4">নিচের যেকোনো জবে ক্লিক করুন, কোড সংগ্রহ করে সাবমিট করুন এবং ৳8 আর্ন করুন!</p>
+                    <p class="text-gray-600 text-sm mb-4">নিচের যেকোনো জবে ক্লিক করুন, কোড সংগ্রহ করে সাবমিট করুন এবং ৳10 আর্ন করুন!</p>
                     <div class="flex items-center justify-center space-x-4 text-sm">
                         <div class="flex items-center">
                             <span class="w-3 h-3 bg-green-500 rounded-full mr-2"></span>
@@ -1038,10 +1038,10 @@
                 } else {
                     // Default links if none are configured
                     tutorialLinks = {
-                        tutorial1: { title: "টিউটোরিয়াল ১", link: "https://example.com/tutorial1" },
-                        tutorial2: { title: "টিউটোরিয়াল ২", link: "https://example.com/tutorial2" },
+                        tutorial1: { title: "ওয়েবসাইটে কাজ কিভাবে করবেন দেখুন👷", link: "https://example.com/tutorial1" },
+                        tutorial2: { title: "একদিনে কিভাবে ২০ টার উপরে রেফার করবেন 👨‍❤️‍👨", link: "https://example.com/tutorial2" },
                         tutorial3: { title: "টিউটোরিয়াল ৩", link: "https://example.com/tutorial3" },
-                        tutorial4: { title: "টিউটোরিয়াল ৪", link: "https://example.com/tutorial4" },
+                         ২tutorial4: { title: "টিউটোরিয়াল ৪", link: "https://example.com/tutorial4" },
                         tutorial5: { title: "টিউটোরিয়াল ৫", link: "https://example.com/tutorial5" }
                     };
                 }
@@ -1146,7 +1146,7 @@
                     if (lastCompleted) {
                         const now = new Date();
                         const timeDiff = now - lastCompleted;
-                        const eightHours = 8 * 60 * 60 * 1000; // 8 hours in milliseconds
+                        const eightHours =  * 60 * 60 * 1000; // 8 hours in milliseconds
                         
                         if (timeDiff < eightHours) {
                             // Still in cooldown
@@ -1195,7 +1195,7 @@
             if (lastCompleted) {
                 const now = new Date();
                 const timeDiff = now - lastCompleted;
-                const eightHours = 8 * 60 * 60 * 1000; // 8 hours in milliseconds
+                const eightHours = 12 * 60 * 60 * 1000; // 12 hours in milliseconds
                 
                 if (timeDiff < eightHours) {
                     const remainingTime = eightHours - timeDiff;
@@ -1281,7 +1281,7 @@
                             <div class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold">${i}</div>
                             <div>
                                 <h3 class="text-slate-800 font-medium">কোড সংগ্রহ করুন</h3>
-                                <p class="text-gray-600 text-sm">৳8 আর্ন করুন</p>
+                                <p class="text-gray-600 text-sm">৳10 আর্ন করুন</p>
                             </div>
                         </div>
                         <button id="pro-job-btn-${i}" onclick="handleProJobClick(${i}, '${jobLink}', '${jobCode}')" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
@@ -1320,7 +1320,7 @@
                 });
                 
                 // Update each pro job button
-                for (let i = 1; i <= 5; i++) {
+                for (let i = 1; i <= 10; i++) {
                     const button = document.getElementById(`pro-job-btn-${i}`);
                     if (!button) continue;
                     
@@ -1422,19 +1422,19 @@
                     userName: userData.name || 'Unknown',
                     jobId: jobId,
                     completedAt: serverTimestamp(),
-                    coinsEarned: 8,
+                    coinsEarned: 10,
                     userAgent: navigator.userAgent
                 });
                 
                 // Update user balance
                 const userRef = doc(db, 'users', currentUser.uid);
                 await updateDoc(userRef, {
-                    balance: increment(8)
+                    balance: increment(10)
                 });
                 
-                userData.balance += 8;
+                userData.balance += 10;
                 updateUI();
-                showAlert("🎉 সফল! ৳8 আপনার অ্যাকাউন্টে যোগ হয়েছে।");
+                showAlert("🎉 সফল! ৳10 আপনার অ্যাকাউন্টে যোগ হয়েছে।");
                 
                 // Hide the code input field
                 document.getElementById(`code-input-${jobId}`).style.display = 'none';
